@@ -1,0 +1,78 @@
+{{!< default}}
+
+    <div class="post_list">
+
+            <div class="post_container container-fluid">
+                <div class="image_sidebar col-md-6">
+
+                    {{! This is the post loop - each post will be output using this markup }}
+                    {{#author}}
+                        <div id="post_image-{{id}}" class="{{status}} {{#if featured}}featured{{/if}} {{#if image}}has-post-image{{/if}} post_image_wrap">   
+
+                                <div class="post_image" style="background-image: url({{cover}});">
+                                    <div class="post_image_bottom hidden-xs hidden-sm">
+                                        <h1 class="post-title">{{name}}</h1>
+                                    </div>
+                                </div>
+                        </div><!-- /post_image_wrap -->
+                        
+                        <div class="hidden-md hidden-lg">
+                            <article id="post-mobile-{{id}}" class="{{post_class}} {{status}} {{#if featured}}featured{{/if}} {{#if image}}has-post-image{{/if}}">
+                                <h1 class="post-title">{{name}}</h1>
+                                <div class="post-content">
+                                    {{bio}}
+                                </div>
+                                <div class="clearfix"></div>
+                            </article>
+                        </div>
+
+                    {{/author}}
+
+                </div>
+
+            <section class="content_sidebar col-md-6">
+
+
+                {{! Everything inside the #post tags pulls data from the page }}
+                {{#author}}
+                    <article id="post-{{id}}" class="{{post_class}} {{status}} {{#if featured}}featured{{/if}} {{#if image}}has-post-image{{/if}} hidden-xs hidden-sm">
+                        <div class="author-content">
+                            {{#if image}}
+                                <figure class="author-image">
+                                    <img src="{{image}}" alt="{{name}}">
+                                </figure>
+                            {{/if}}
+                            <p class="author-bio">{{bio}}</p>
+
+                            <ul class="author-meta">
+                                <li class="author-location"><i class="fa fa-map-marker"></i>{{location}}</li>
+                                <li class="author-link"><i class="fa fa-link"></i><a href="{{website}}">{{website}}</a></li>
+                                <li class="author-stats"><i class="fa fa-pencil"></i>{{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}</li>
+                            </ul>
+                        </div><!-- /author-content -->
+                {{/author}}
+
+                        <h5 class="author-post-list-title">Latest post from {{author.name}}</h5>
+                        <div class="author-post-list">
+
+                            {{#foreach posts}}
+                                <article id="list_post-{{id}}" class="{{post_class}} {{status}} {{#if featured}}featured{{/if}} {{#if image}}has-post-image{{/if}}">
+
+                                        <h2 class="post_title"><a href="{{url}}">{{title}}</a></h2>
+                                        <time class="post_time"><span>{{date format="DD"}}</span>{{date format="MMMM"}}</time>
+                                    <div class="clearfix"></div>
+                                </article>
+                            {{/foreach}}
+                        </div><!-- /author-post-list -->
+
+
+                    </article>
+                
+
+
+            </section><!-- /main -->
+
+            <div class="clearfix"></div>
+        </div><!-- /#container -->
+
+    </div><!-- post_list -->

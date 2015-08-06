@@ -1,0 +1,93 @@
+<div class="nav_sidebar">
+        <a href="#" class="ql_nav_close"><i class="fa fa-times"></i></a>
+
+        <div class="nav_sidebar_wrap">
+
+                <div class="table-wrap">
+                    <div class="table-top">
+
+                        <div class="logo_container">
+                            {{#if @blog.logo}}
+                                <a class="ql_logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Logo" /></a>
+                            {{else}}
+                                <a href="{{@blog.url}}" class="ql_logo">{{@blog.title}}</a>
+                            {{/if}}
+                            
+                            <p class="logo_desc">{{@blog.description}}</p>
+                        </div><!-- /logo_container -->
+
+
+                        {{navigation}}
+                        
+                        
+                        <hr class="hr-small">
+
+
+                    </div><!-- /table-top -->
+
+                    <div class="table-center">
+                        <div class="ql_search_results">
+                                <div class="ql_featured_post">
+                                    <div class="ql_featured_post_image" style="background-image: url({{image}});"></div>
+                                    <h6><a href="{{url}}">{{title}}</a></h6>
+                                </div>
+                        </div><!-- /ql_featured_posts -->
+
+                        {{^is "page, post, tag"}}
+                        <div class="ql_featured_posts">
+                            <h5>Featured Posts</h5>
+                            {{#foreach posts}}
+                                {{#if featured}}
+                                <div class="ql_featured_post">
+                                    <div class="ql_featured_post_image" style="background-image: url({{image}});"></div>
+                                    <h6><a href="{{url}}">{{title}}</a></h6>
+                                </div>
+                                {{/if}}
+                            {{/foreach}}
+                        </div><!-- /ql_featured_posts -->
+                        {{/is}}
+                        
+                        <form class="search_form">
+                          <input id="search-field" placeholder="Search...">
+                          <input type="submit" value="search"  class="seach_submit">
+                          <i class="fa fa-search"></i>
+                        </form>
+
+
+                    </div><!-- /table-center -->
+
+
+                    <div class="table-bottom">
+                        <ul class="nav nav_social">
+                            <li class="n_facebook"><a href="#" ><i class="fa fa-facebook"></i></a></li>
+                            <li class="n_twitter"><a href="#" ><i class="fa fa-twitter"></i></a></li>
+                            <li class="n_dribbble"><a href="#"><i class="fa fa-dribbble"></i></a></li>
+                            <li class="n_instagram"><a href="#"><i class="fa fa-instagram"></i></a></li>
+                            <!--
+                            <li class="n_foursquare"><a href="#"><i class="fa fa-foursquare"></i></a></li>
+                            <li class="n_flickr"><a href="#"><i class="fa fa-flickr"></i></a></li>
+                            <li class="n_youtube"><a href="#"><i class="fa fa-youtube-play"></i></a></li>
+                            <li class="n_vimeo"><a href="#"><i class="fa fa-vimeo-square"></i></a></li>
+                            <li class="n_tumblr"><a href="#"><i class="fa fa-tumblr"></i></a></li>
+                            <li class="n_skype"><a href="#"><i class="fa fa-skype"></i></a></li>
+                            <li class="n_google-plus"><a href="#"><i class="fa fa-google-plus"></i></a></li>
+                            <li class="n_pinterest"><a href="#"><i class="fa fa-pinterest"></i></a></li>
+                            <li class="n_linkedin"><a href="#"><i class="fa fa-linkedin"></i></a></li>
+                            <li class="n_rss"><a href="#"><i class="fa fa-rss"></i></a></li>
+                            -->
+                        </ul>
+
+
+                    </div><!-- /table-bottom -->
+
+                </div><!-- table-wrap-->
+
+            </div><!-- nav_sidebar_wrap -->
+
+        <div class="clearfix"></div>
+    </div><!-- /nav_sidebar -->
+
+
+    <header id="header">
+        <button class="ql_nav_btn"><i class="fa fa-navicon"></i><i class="fa fa-arrow-left"></i></button>
+    </header>

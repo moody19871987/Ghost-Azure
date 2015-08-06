@@ -1,0 +1,73 @@
+{{!< default}}
+	
+
+
+	{{! The main content area on the homepage }}
+    <div class="post_list">
+
+            <div class="post_container container-fluid">
+                <div class="image_sidebar col-md-6">
+
+                    {{! This is the post loop - each post will be output using this markup }}
+					{{#post}}
+					    <div id="post_image-{{id}}" class="{{status}} {{#if featured}}featured{{/if}} {{#if image}}has-post-image{{/if}} post_image_wrap">   
+
+					            <div class="post_image" style="background-image: url({{image}});">
+
+					                <div class="post_image_top">
+					                    <time class="post_time"><a href="{{url}}"><span>{{date format="DD"}}</span>{{date format="MMMM"}}</a></time>
+					                    <div class="post_author hidden-xs">
+					                    <img src="{{author.image}}" alt="{{author.name}}" />{{author}}
+					                    </div>
+					                </div>
+
+					                <div class="post_image_bottom">
+					                    <div class="time_read"><span></span> read</div>
+					                    <h2 class="post-title hidden-xs hidden-sm">{{title}}</h2>
+					                </div>
+					            </div>
+					    </div><!-- /post_image_wrap -->
+					    
+					    <div class="hidden-md hidden-lg">
+					        <article id="post-mobile-{{id}}" class="{{post_class}} {{status}} {{#if featured}}featured{{/if}} {{#if image}}has-post-image{{/if}}">
+					            <h2 class="post-title">{{title}}</h2>
+					            {{> "post"}}
+					            <div class="clearfix"></div>
+					        </article>
+					    </div>
+
+					{{/post}}
+
+                </div>
+
+            <section class="content_sidebar col-md-6">
+
+
+            	{{! Everything inside the #post tags pulls data from the post }}
+	            {{#post}}
+	            	<article id="post-{{id}}" class="{{post_class}} {{status}} {{#if featured}}featured{{/if}} {{#if image}}has-post-image{{/if}} hidden-xs hidden-sm">
+
+	                	{{> "post"}}
+
+
+
+	                	<div class="clearfix"></div>
+                    </article>
+
+	            {{/post}}
+
+
+            </section><!-- /main -->
+			
+			<div class="clearfix"></div>
+            <div class="disqus_wrap col-md-12">
+            	
+            	{{#is "post"}}
+					 {{> "disqus"}}
+				{{/is}}
+            </div>
+
+            <div class="clearfix"></div>
+        </div><!-- /#container -->
+
+    </div><!-- post_list -->

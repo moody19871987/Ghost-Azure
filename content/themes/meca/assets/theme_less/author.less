@@ -1,0 +1,91 @@
+.author-cover{
+	height: 450px;
+	position: relative;
+	margin: 15px 0 0 0;
+}
+.author-cover.no-cover{
+	height: 0px;
+	margin: 0;
+}
+
+.author-content .author-image{
+	border-radius: 100%;
+	width: 110px;
+	height: 110px;
+	overflow: hidden;
+	border: 10px solid @gray-lighter2;
+	margin: 0 auto;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: -50px;
+	text-align: center;
+}
+
+.author-content{
+	padding: 60px 30px 30px;
+	background-color: @gray-lighter2;
+	text-align: center;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	position: relative;
+}
+.tag-template .author-content{
+		padding: 20px;
+}
+.author-meta{
+	list-style: none;
+	padding-top: 0.71428571428571em;
+	padding-left: 0;
+	font-family: @font-family-sans-serif;
+}
+.author-meta li{
+	display: inline-block;
+	margin-right: 1.42857142857143em;
+}
+.author-meta li i{
+	margin-right: 0.71428571428571em;
+}
+.author-post-list{
+	border: 1px solid @gray-lighter;
+}
+.author-post-list article .post_title{
+	font-size: 16px;
+	margin-bottom: 0;
+
+}
+.author-post-list-title{
+
+}
+.author-post-list .post{
+	padding: 0;
+	border-bottom: 1px solid @gray-lighter;
+	position: relative;
+}
+.author-post-list .post:last-child{
+	border-bottom: none;
+}
+.author-post-list .post .post_title a{
+	color: @gray;
+	padding: 20px 60px 20px 20px;
+	display: block;
+	.transition(all 200ms);
+}
+.author-post-list .post .post_title a:hover{
+	text-indent: 20px;
+	background-color: @gray-lighter2;
+	text-decoration: none;
+}
+.author-post-list  .post_time{
+	position: absolute;
+	top: 10px;
+	right: 20px;
+	.font-size(13);
+	text-shadow: none;
+	color: @gray-light;
+	margin: 0;
+}
+.author-post-list  .post_time span{
+	.font-size(16);
+	line-height: 18px;
+}

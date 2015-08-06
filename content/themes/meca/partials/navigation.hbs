@@ -1,0 +1,9 @@
+<nav id="jqueryslidemenu" class="jqueryslidemenu ">
+
+    <ul id="nav" class="nav">
+        {{#foreach navigation}}
+            <li class="nav-{{slug}} {{#if current}}current_page_item{{/if}}"><a href="{{url absolute="true"}}" class="{{#if current}}current_nav{{/if}}">{{label}}</a></li>
+        {{/foreach}}
+    </ul>
+
+</nav>

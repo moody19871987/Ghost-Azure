@@ -1,0 +1,12 @@
+<div class="metadata">
+    <a href="{{url}}#disqus_thread" class="show_comments"><i class="fa fa-comment"></i> Show Comments</a>
+    <a href="{{author.url}}" class="meta_author hidden-md hidden-lg"><i class="fa fa-user"></i> {{author.name}}</a>
+    {{#if tags}}
+	    <ul class="meta_categories">
+	    {{#foreach tags}}
+	      <li><a href="{{url}}" title="{{name}}" class="tag-{{id}}">{{name}}</a></li>  
+	    {{/foreach}}
+	    </ul>
+	{{/if}}
+    <div class="clearfix"></div>
+</div>

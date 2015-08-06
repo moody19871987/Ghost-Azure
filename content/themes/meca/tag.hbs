@@ -1,0 +1,51 @@
+{{!< default}}
+
+    {{#tag}}
+        <div class="tag-content">
+                    <h1 class="tag-title"><span>Tag:</span> {{name}}</h1>
+                    {{#if description}}
+                        <p class="tag-bio">{{description}}</p>
+                    {{/if}}
+
+                    <ul class="tag-meta">
+                        <li class="tag-stats"><i class="fa fa-file-text-o"></i>{{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}</li>
+                    </ul>
+        </div><!-- /tag-content -->
+    {{/tag}}
+
+        {{! The main content area on the homepage }}
+        <div class="post_list">
+
+                <div class="post_container container-fluid">
+                    <div class="image_sidebar col-md-6">
+
+                        {{! The tag below includes the post loop - partials/loop.hbs }}
+                        {{> "loop-images"}}
+
+                    </div>
+
+                <section class="content_sidebar col-md-6">
+                    {{#foreach posts}}
+                        <article id="post-{{id}}" class="{{post_class}} {{status}} {{#if featured}}featured{{/if}} {{#if image}}has-post-image{{/if}} hidden-xs hidden-sm">
+                           
+
+                            {{> "post"}}
+
+                            <div class="clearfix"></div>
+                        </article>
+                        
+                    {{/foreach}}
+
+                </section><!-- /main -->
+
+                <div class="clearfix"></div>
+            </div><!-- /#container -->
+
+        </div><!-- post_list -->
+
+    {{pagination}}
+
+
+
+
+		

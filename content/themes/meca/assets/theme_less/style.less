@@ -1,0 +1,167 @@
+/*
+Theme Name: Meca
+Theme URI: http://www.quemalabs.com
+Description: A Premium Ghost Theme.
+Version: 1.0.0
+Author: Quema Labs
+Author URI: http://www.quemalabs.com
+*/
+
+/*
+==========================================
+Theme Styles
+========================================== 
+*/
+
+html{font-size: @font-size-base;}
+body{background-color: @backgroundColor;}
+
+
+h1, h2, h3, h4, h5, h6{
+	margin-top: 0;
+	font-family: @font-family-sans-serif;
+}
+
+
+
+
+/* Animation at loading page */
+.post_image{ opacity: 0; }
+.no-js .post_image{ opacity: 1; }
+.pace-done .post_image{
+	.animated();
+	.fadeIn();
+}
+.post_image_bottom{ opacity: 0; }
+.no-js .post_image_bottom{ opacity: 1; }
+.pace-done .post_image_bottom{
+	.animation-delay(100ms);
+	.animated();
+	.fadeInUp();
+}
+.post_image_top{ opacity: 0; }
+.no-js .post_image_top{ opacity: 1; }
+.pace-done .post_image_top{
+	.animation-delay(500ms);
+	.animated();
+	.fadeInDown();
+}
+.content_sidebar .post{ opacity: 0; }
+.no-js .content_sidebar .post{ opacity: 1; }
+.pace-done .content_sidebar .post{
+	.animation-delay(600ms);
+	.animated();
+	.fadeInRight();
+	opacity: 1;
+}
+
+
+
+/*
+==========================================
+Header
+========================================== 
+*/
+@import "header.less";
+
+
+/*
+==========================================
+Footer
+========================================== 
+*/
+@import "footer.less";
+
+
+/*
+==========================================
+Blog & Pages
+========================================== 
+*/
+@import "blog_pages.less";
+
+
+/*
+==========================================
+Author Page
+========================================== 
+*/
+@import "author.less";
+
+
+/*
+==========================================
+Tag Page
+========================================== 
+*/
+@import "tag.less";
+
+
+/*
+==========================================
+Pace (Loading animation)
+========================================== 
+*/
+@import "pace.less";
+
+/*
+==========================================
+Animate
+========================================== 
+*/
+@import "animate.min.less";
+
+
+/*
+==========================================
+Global Styles
+========================================== 
+*/
+
+@import "global.less";
+
+
+
+
+
+
+/*
+==========================================
+Responsive Styles
+========================================== 
+*/
+	/*
+	// Extra Small Breakpoint
+	// ------------------
+	*/
+	@import "mediaquery_xs.less";
+
+	/*
+	// Small Breakpoint
+	// ------------------
+	*/
+	@import "mediaquery_sm.less";
+
+	/*
+	// Medium Breakpoint
+	// ------------------
+	*/
+	@import "mediaquery_md.less";
+
+	/*
+	// Extra Larga Breakpoint
+	// ------------------
+	*/
+	@import "mediaquery_lg.less";
+
+
+
+
+
+/*
+==========================================
+LESS Variables and Mixins
+========================================== 
+*/
+@import "../less/variables.less"; // Modify this for custom colors, font-sizes, etc
+@import "../less/mixins.less";
